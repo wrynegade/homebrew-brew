@@ -1,10 +1,9 @@
 class Scwrypts < Formula
-  desc     "the ultimate dev-ops script runner"
+  desc "Ultimate devops script runner"
   homepage "https://github.com/wrynegade/scwrypts"
-  license  "GPL-3.0"
-
-  url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.3.0.tar.gz"
-  sha256 "66a010e3b9b5ecea84b29041431c581c3fb0108010f7b5281a4b8e2078c22133"
+  url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.3.1.tar.gz"
+  sha256 "531d6584a19dc67a7007e0e02f314a88b09dbfd0a38869761a764c5efb3a636c"
+  license "GPL-3.0"
 
   depends_on "awscli"
   depends_on "coreutils"
@@ -33,17 +32,19 @@ class Scwrypts < Formula
 
   def install
     (share/"scwrypts").mkpath
-    (share/"scwrypts").install ".config/", "plugins/", "py/", "zsh/" , "zx/", "LICENSE", "README.md", "scwrypts", "scwrypts.plugin.zsh"
+    (share/"scwrypts").install \
+      ".config/", \
+      "plugins/", \
+      "py/", \
+      "zsh/", \
+      "zx/", \
+      "LICENSE", \
+      "README.md", \
+      "scwrypts", \
+      "scwrypts.plugin.zsh"
 
-    File.open(share/"scwrypts/MANAGED_BY", 'w+') {
-      |file|
-      file.write("homebrew")
-    }
-
-    File.open(share/"scwrypts/VERSION", 'w+') {
-      |file|
-      file.write("v#{version}")
-    }
+    File.write(share/"scwrypts/MANAGED_BY", "homebrew")
+    File.write(share/"scwrypts/VERSION", "v#{version}")
 
     bin.install_symlink "#{share}/scwrypts/scwrypts"
   end
