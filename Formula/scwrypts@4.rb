@@ -1,4 +1,4 @@
-class Scwrypts < Formula
+class ScwryptsAT4 < Formula
   desc "Ultimate devops script runner"
   homepage "https://github.com/wrynegade/scwrypts"
   url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.3.1.tar.gz"
