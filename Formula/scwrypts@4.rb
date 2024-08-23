@@ -1,8 +1,8 @@
 class ScwryptsAT4 < Formula
   desc "Ultimate devops script runner"
   homepage "https://github.com/wrynegade/scwrypts"
-  url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.4.1.tar.gz"
-  sha256 "2e27efbd86301ade24d753e2730da5560b8689c7e6e5963f6a5c5b8b62fc6ded"
+  url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.4.3.tar.gz"
+  sha256 "b9fdfb6283d8c618cb782a6a461f2730fd9902622bb6d67df180f78ef937cbfc"
   license "GPL-3.0"
 
   depends_on "awscli"
