@@ -41,7 +41,8 @@ class ScwryptsAT44 < Formula
       "LICENSE", \
       "README.md", \
       "scwrypts", \
-      "scwrypts.plugin.zsh"
+      "scwrypts.plugin.zsh" \
+      "scwrypts.scwrypts.zsh"
 
     File.write(share/"scwrypts/MANAGED_BY", "homebrew")
     File.write(share/"scwrypts/VERSION", "v#{version}")
