@@ -7,7 +7,6 @@ class ScwryptsAT44 < Formula
 
   depends_on "awscli"
   depends_on "coreutils"
-  depends_on "docker"
   depends_on "ffmpeg"
   depends_on "findutils"
   depends_on "fzf"
@@ -29,6 +28,15 @@ class ScwryptsAT44 < Formula
   depends_on "yq"
 
   uses_from_macos "zsh"
+
+  def caveats
+    <<~EOS
+      This formula requires docker to be installed for full functionality.
+      You can install it with:
+        macos: brew install --cask docker
+        else:  brew install docker
+    EOS
+  end
 
   def install
     (share/"scwrypts").mkpath
