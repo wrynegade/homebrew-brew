@@ -29,15 +29,6 @@ class ScwryptsAT44 < Formula
 
   uses_from_macos "zsh"
 
-  def caveats
-    <<~EOS
-      This formula requires docker to be installed for full functionality.
-      You can install it with:
-        macos: brew install --cask docker
-        else:  brew install docker
-    EOS
-  end
-
   def install
     (share/"scwrypts").mkpath
     (share/"scwrypts").install \
@@ -56,6 +47,15 @@ class ScwryptsAT44 < Formula
     File.write(share/"scwrypts/VERSION", "v#{version}")
 
     bin.install_symlink "#{share}/scwrypts/scwrypts"
+  end
+
+  def caveats
+    <<~EOS
+      This formula requires docker to be installed for full functionality.
+      You can install it with:
+        macos: brew install --cask docker
+        else:  brew install docker
+    EOS
   end
 
   test do
