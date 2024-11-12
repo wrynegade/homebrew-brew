@@ -1,13 +1,12 @@
 class Scwrypts < Formula
   desc "Ultimate devops script runner"
   homepage "https://github.com/wrynegade/scwrypts"
-  url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.4.3.tar.gz"
-  sha256 "b9fdfb6283d8c618cb782a6a461f2730fd9902622bb6d67df180f78ef937cbfc"
+  url "https://github.com/wrynegade/scwrypts/archive/refs/tags/v4.4.4.tar.gz"
+  sha256 "4f0c08e57ede9e7a92638afd2609bf0ab15ad10df7a92575169ddec4ef90a416"
   license "GPL-3.0"
 
   depends_on "awscli"
   depends_on "coreutils"
-  depends_on "docker"
   depends_on "ffmpeg"
   depends_on "findutils"
   depends_on "fzf"
@@ -24,7 +23,6 @@ class Scwrypts < Formula
   depends_on "pnpm"
   depends_on "redis"
   depends_on "ripgrep"
-  depends_on "texlive"
   depends_on "yamllint"
   depends_on "yq"
 
@@ -48,6 +46,19 @@ class Scwrypts < Formula
     File.write(share/"scwrypts/VERSION", "v#{version}")
 
     bin.install_symlink "#{share}/scwrypts/scwrypts"
+  end
+
+  def caveats
+    <<~EOS
+      This formula requires docker to be installed for full functionality.
+      You can install it with:
+        macos: brew install --cask docker
+        else:  brew install docker
+
+      This formula requires texlive to be installed for extended functionality.
+      You can install it with:
+               brew install texlive
+    EOS
   end
 
   test do

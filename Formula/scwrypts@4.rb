@@ -7,7 +7,6 @@ class ScwryptsAT4 < Formula
 
   depends_on "awscli"
   depends_on "coreutils"
-  depends_on "docker"
   depends_on "ffmpeg"
   depends_on "findutils"
   depends_on "fzf"
@@ -24,7 +23,6 @@ class ScwryptsAT4 < Formula
   depends_on "pnpm"
   depends_on "redis"
   depends_on "ripgrep"
-  depends_on "texlive"
   depends_on "yamllint"
   depends_on "yq"
 
@@ -47,6 +45,19 @@ class ScwryptsAT4 < Formula
     File.write(share/"scwrypts/VERSION", "v#{version}")
 
     bin.install_symlink "#{share}/scwrypts/scwrypts"
+  end
+
+  def caveats
+    <<~EOS
+      This formula requires docker to be installed for full functionality.
+      You can install it with:
+        macos: brew install --cask docker
+        else:  brew install docker
+
+      This formula requires texlive to be installed for extended functionality.
+      You can install it with:
+               brew install texlive
+    EOS
   end
 
   test do
