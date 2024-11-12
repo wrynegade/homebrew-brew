@@ -23,7 +23,6 @@ class Scwrypts < Formula
   depends_on "pnpm"
   depends_on "redis"
   depends_on "ripgrep"
-  depends_on "texlive"
   depends_on "yamllint"
   depends_on "yq"
 
@@ -55,6 +54,10 @@ class Scwrypts < Formula
       You can install it with:
         macos: brew install --cask docker
         else:  brew install docker
+
+      This formula requires texlive to be installed for extended functionality.
+      You can install it with:
+               brew install texlive
     EOS
   end
 
