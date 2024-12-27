@@ -19,7 +19,6 @@ class Scwrypts < Formula
   depends_on "libnotify"
   depends_on "libpq"
   depends_on "make"
-  depends_on "node"
   depends_on "pnpm"
   depends_on "redis"
   depends_on "ripgrep"
@@ -54,6 +53,11 @@ class Scwrypts < Formula
       You can install it with:
         macos: brew install --cask docker
         else:  brew install docker
+
+      This formula requires Node.js to be installed for extended functionality.
+      It is recommended to use a version manager like one of the following:
+        tj/n:  https://github.com/tj/n
+        nvm:   https://github.com/nvm-sh/nvm
 
       This formula requires texlive to be installed for extended functionality.
       You can install it with:
